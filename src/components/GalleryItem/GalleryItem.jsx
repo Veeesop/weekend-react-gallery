@@ -1,30 +1,19 @@
 import {useState} from 'react'
-import axios from 'axios'
 
-
-const GalleryItem = ({galleryItem}) => {
-    const [liked, setLiked] = useState(0)
+const GalleryItem = ({galleryItem, addLike}) => {
+    const [liked, setLiked] = useState(galleryItem.likes)
     const [isShown, setIsShown] = useState(false);
-
-    
-    const addLike = (id) => {
-        axios.put(`/gallery/like/${id}`).then(()=>{
-            setLiked(liked + 1)
-        }).catch((err) => {
-            console.log("ERROR in addLike", err)
-        })
-    }
 
     const handleLike = (evt) => {
         evt.preventDefault()
-        
         addLike(evt.target.id)
         console.log(liked)
+        setLiked(liked + 1)
+        galleryItem.likes = liked;
     }
 
     return (
-        <div className="photo-container" onMouseEnter={() => setIsShown(true)}
-        onMouseLeave={() => setIsShown(false)}>
+        <div className="photo-container" onClick={() => setIsShown(!isShown)}>
             {!isShown ? <div>
                 <img src={galleryItem.path} alt="" className='backdrop'/>
             </div> : 
