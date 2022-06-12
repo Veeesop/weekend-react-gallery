@@ -4,6 +4,25 @@ const router = express.Router();
 const pool = require("../modules/pool");
 // DO NOT MODIFY THIS FILE FOR BASE MODE
 
+router.post("/", (req, res) => {
+  console.log(req.body);
+  const sqlQuery = `
+    INSERT INTO hotdogs (path, description)
+    VAlUES ($1, $2)
+  `;
+  const sqlParams = [req.body.path, req.body.description];
+  pool
+    .query(sqlQuery, sqlParams)
+    .then(() => {
+      res.sendStatus(200);
+      console.log("new hotdog added!");
+    })
+    .catch((err) => {
+      console.log("error in post", err);
+      res.sendStatus(500);
+    });
+});
+
 // PUT Route
 router.put("/:id", (req, res) => {
   const galleryId = req.params.id;
