@@ -25,8 +25,6 @@ const GalleryForm = ({addNewHotDog}) => {
                 onChange={evt => setUrl(evt.target.value)}/>
             <button type="submit" >Submit</button>
             </form>
-            
-
         </>
     )
 }

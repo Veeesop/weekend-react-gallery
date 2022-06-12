@@ -4,6 +4,25 @@ const router = express.Router();
 const pool = require("../modules/pool");
 // DO NOT MODIFY THIS FILE FOR BASE MODE
 
+router.delete("/:id", (req, res) => {
+  id = req.params.id;
+  const sqlQuery = `
+        DELETE FROM hotdogs
+        WHERE id = $1
+    `;
+  const sqlParams = [id];
+  pool
+    .query(sqlQuery, sqlParams)
+    .then(() => {
+      console.log("deleted hot dog");
+      res.sendStatus(200);
+    })
+    .catch((err) => {
+      console.log("error in delete", err);
+      res.sendStatus(500);
+    });
+});
+
 router.post("/", (req, res) => {
   console.log(req.body);
   const sqlQuery = `
