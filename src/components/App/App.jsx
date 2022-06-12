@@ -11,6 +11,14 @@ function App() {
     getAll()
   },[])
 
+  const deleteHotDog = (id) => {
+    axios.delete(`/gallery/${id}`).then(()=>{
+      getAll()
+    }).catch((err)=>{
+      console.log('error in delete', err)
+    })
+  }
+
   const addLike = (id) => {
     axios.put(`/gallery/${id}`).then(()=>{
         getAll()
@@ -48,7 +56,7 @@ function App() {
           <GalleryForm addNewHotDog={addNewHotDog}/>
         </div>
         <div className='gallery'>
-        <GalleryList galleryList={galleryList} getAll={getAll} addLike={addLike}/>
+        <GalleryList galleryList={galleryList} getAll={getAll} addLike={addLike} deleteHotDog={deleteHotDog}/>
         </div>
         
       </div>
