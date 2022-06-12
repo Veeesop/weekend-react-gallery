@@ -35,7 +35,7 @@ function App() {
       inputs.forEach(input => {
         input.value = ''
       })
-
+      getAll()
     })
   }
 
