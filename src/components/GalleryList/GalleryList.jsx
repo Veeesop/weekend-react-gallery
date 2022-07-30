@@ -1,6 +1,8 @@
 import GalleryItem from "../GalleryItem/GalleryItem"
 
 
+
+
 const GalleryList = ({galleryList, getAll, addLike, deleteHotDog}) => {
     return (
         <>

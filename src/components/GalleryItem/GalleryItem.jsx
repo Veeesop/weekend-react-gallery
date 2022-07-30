@@ -18,13 +18,16 @@ const GalleryItem = ({galleryItem, addLike, deleteHotDog}) => {
     }
 
     return (
-        <div className="photo-container" onClick={() => setIsShown(!isShown)}>
+        <div className="photo-container" >
+            <div className='photo-or-name' onClick={() => setIsShown(!isShown)}>
             {!isShown ? <div>
                 <img src={galleryItem.path} alt="" className='backdrop'/>
             </div> : 
             <div className='photo-container'>
                 <p>{galleryItem.description}</p>
             </div>}
+            </div>
+            
             
             <button id={galleryItem.id} onClick={handleDelete}>Delete</button>
             <button likes={galleryItem.likes} id={galleryItem.id} onClick={handleLike}>Love It!</button>
