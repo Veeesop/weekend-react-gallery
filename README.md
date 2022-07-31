@@ -59,6 +59,8 @@ This project aims to display images of important elements of my life. Visitors a
 
 - [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)]()
 - [![postgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)]()
+- [![Node](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)]()
+- [![Express](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)]()
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -78,7 +80,7 @@ This project aims to display images of important elements of my life. Visitors a
 ## Contact
 
 [![LinkedIn][linkedin-shield]][linkedin-url]
-[![Gmail][gmail]][gmail-url]
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:alexanderratanas@gmail.com)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
